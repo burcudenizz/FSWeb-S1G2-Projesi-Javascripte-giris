@@ -21,7 +21,7 @@ Aşağıdakileri yapın:
 */
 
 let surucuYasi = 35;
-if(surucuYasi > 18){
+if(surucuYasi > 18) {
   console.log(true);
 } else {
   console.log(false);
@@ -76,8 +76,8 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamlayın:
 
 function carpma(a ,b){
   /*buraya kodunu yazabilirsin*/
-  console.log(a*b);
-} carpma(7,4);
+  return a * b;
+} console.log(carpma(7,4));
 
 
 
@@ -115,7 +115,26 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 
 function oyun(oyuncu, bilgisayar){
   /*buraya kodunu yazabilirsin*/
-}
+  if (oyuncu === "Taş" && bilgisayar === "Kağıt"){
+    return "Kazandın!";
+    } else if (oyuncu === "Taş" && bilgisayar === "Makas"){ 
+      return "Kazandın!";
+    } else if (oyuncu === "Kağıt" && bilgisayar === "Makas"){ 
+      return "Kaybettin!";
+    } else if (oyuncu === "Kağıt" && bilgisayar === "Taş"){ 
+      return "Kazandın!";  
+    } else if (oyuncu === "Makas" && bilgisayar === "Taş"){ 
+      return "Kaybettin!"; 
+    } else if (oyuncu === "Makas" && bilgisayar === "Kağıt"){ 
+      return "Kazandın!"; 
+    } else if (oyuncu === "Makas" && bilgisayar === "Makas"){ 
+      return "Kaybettin!"; 
+    } else if (oyuncu === "Taş" && bilgisayar === "Taş"){ 
+      return "Kaybettin!"; 
+    } else if (oyuncu === "Kağıt" && bilgisayar === "Kağıt"){ 
+      return "Kaybettin!";   
+    }
+  }
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
 /*
@@ -132,6 +151,16 @@ function oyun(oyuncu, bilgisayar){
 Şimdi kendi seçtiğiniz bir seçime karşı bilgisayarın rastgele oluşturduğu seçimi yukarıda yazdığınız oyun fonsiyonu ile oynayın ve sonucu console'a yazdırın.
 Örn: console.log(oyun("Makas",bilgisayarinSecimi()))
 */
+function bilgisayarinSecimi() {
+   let secim = Math.random() * 3;
+   if(secim < 1){
+    return "Taş";
+   } else if ( secim < 2 ){
+    return "Makas";
+} else {
+  return "Kağıt";
+}
+}
 
 /* Görev 4 : Metrik Dönüştürücü */
 
