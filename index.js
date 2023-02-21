@@ -113,27 +113,29 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
-function oyun(oyuncu, bilgisayar){
+function oyun(oyuncu, bilgisayar) {
   /*buraya kodunu yazabilirsin*/
+  let sonuc = "";
   if (oyuncu === "Taş" && bilgisayar === "Kağıt"){
-    return "Kazandın!";
+    sonuc = "Kazandın!";
     } else if (oyuncu === "Taş" && bilgisayar === "Makas"){ 
-      return "Kazandın!";
+      sonuc = "Kazandın!";
     } else if (oyuncu === "Kağıt" && bilgisayar === "Makas"){ 
-      return "Kaybettin!";
+      sonuc = "Kaybettin!";
     } else if (oyuncu === "Kağıt" && bilgisayar === "Taş"){ 
-      return "Kazandın!";  
+      sonuc = "Kazandın!";  
     } else if (oyuncu === "Makas" && bilgisayar === "Taş"){ 
-      return "Kaybettin!"; 
+      sonuc = "Kaybettin!"; 
     } else if (oyuncu === "Makas" && bilgisayar === "Kağıt"){ 
-      return "Kazandın!"; 
+      sonuc = "Kazandın!"; 
     } else if (oyuncu === "Makas" && bilgisayar === "Makas"){ 
-      return "Kaybettin!"; 
+      sonuc = "Beraberlik"; 
     } else if (oyuncu === "Taş" && bilgisayar === "Taş"){ 
-      return "Kaybettin!"; 
+      sonuc = "Beraberlik!"; 
     } else if (oyuncu === "Kağıt" && bilgisayar === "Kağıt"){ 
-      return "Kaybettin!";   
+      sonuc = "Beraberlik";   
     }
+    return sonuc;
   }
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
@@ -210,9 +212,12 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 3. Bu fonksiyonun dışında bir yerde, maymun sayısının her seferinde 1 azaldığı ve maymun sayısı 1 olana kadar devem eden bir döngü oluşturun. 
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
-
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
+for(let sayi = 5; sayi >= 1; sayi--){
+function cocukSarkisi(sarki){
       /*buraya kodunu yazabilirsin*/
+    let sayi = 5;
+}
+console.log(sayi + " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!")
 }
 
 
@@ -231,10 +236,22 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
+function notHesapla(sinavSonucu){
 /*buraya kodunu yazabilirsin*/
+let geciciSonuc = "";
+if(sinavSonucu <= 100 && sinavSonucu>= 90){
+geciciSonuc = "A aldın";
+} else if(sinavSonucu <= 89 && sinavSonucu>= 80){
+geciciSonuc = "B aldın";
+} else if(sinavSonucu <= 79 && sinavSonucu>= 70){
+geciciSonuc = "C aldın";
+}else if(sinavSonucu <= 69 && sinavSonucu>= 60){
+geciciSonuc = "D aldın";
+} else if(sinavSonucu <= 59){
+geciciSonuc = "F aldın";
+} 
+return geciciSonuc;
 }
-
 
 
 /* Bonus Çalışma: Sesli harf sayacı - Kaç tane sesli harf var? */
@@ -249,8 +266,9 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 */
 
 
-function sesliHarfSayaci(/*buraya kodunu yazabilirsin*/) {
+function sesliHarfSayaci(ifade) {
   /*buraya kodunu yazabilirsin*/
+  
 }
 
 
