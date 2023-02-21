@@ -20,7 +20,12 @@ Aşağıdakileri yapın:
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
 
-
+let surucuYasi = 35;
+if(surucuYasi > 18){
+  console.log(true);
+} else {
+  console.log(false);
+}
 
 /*
 Görev 1b - Değerler (puanlamaya dahil değildir)
@@ -35,6 +40,12 @@ Aşağıdakileri yapınız:
 */
 
 
+let birinciDeger = 95;
+let ikinciDegeri = 87;
+
+if(birinciDeger > ikinciDegeri){
+  birinciDeger = 45;
+} console.log(birinciDeger);
 
 
 
@@ -49,6 +60,8 @@ Aşağıdakileri yapın:
    İPUCU: Number metoduna bakabilirsin
 */
 
+let number = "1999";
+console.log(Number(number));
 
 
 
@@ -61,9 +74,10 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamlayın:
    3. console.log(carpma(7,4)) ile yazdığınız fonsiyonu test edin. Console'da sonucu 28 olarak görmelisiniz.
 */
 
-function carpma(/*buraya kodunu yazabilirsin*/){
+function carpma(a ,b){
   /*buraya kodunu yazabilirsin*/
-}
+  console.log(a*b);
+} carpma(7,4);
 
 
 
@@ -77,8 +91,10 @@ Aşağıdakileri yapın:
  3. Hesaplanan köpeğin yaşını dönün.
  */
 
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
+function kopeginYasi(yas){
   /*buraya kodunu yazabilirsin*/
+  yas = yas * 7;
+  return yas;
 }
 
 
@@ -127,8 +143,10 @@ Aşağdaki milDonusturucu fonksiyonunu aşağıdakileri kullanarak tamamlayın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
+function milDonusturucu(degerKm){
   /*buraya kodunu yazabilirsin*/
+  let mil = degerKm * 0.621371;
+  return mil;
 }
 
 
@@ -143,8 +161,10 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 Google'da arama ipucu: "feet cm dönüştürme"
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
+function feetDonusturucu(cm){
   /*buraya kodunu yazabilirsin*/
+  let feet = cm / 30.48;
+  return feet;
 }
 
 
