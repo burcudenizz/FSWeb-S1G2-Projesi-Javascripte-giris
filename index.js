@@ -113,30 +113,37 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
-function oyun(oyuncu, bilgisayar) {
+function oyun(oyuncu, bilgisayar){
   /*buraya kodunu yazabilirsin*/
-  let sonuc = "";
-  if (oyuncu === "Taş" && bilgisayar === "Kağıt"){
-    sonuc = "Kazandın!";
-    } else if (oyuncu === "Taş" && bilgisayar === "Makas"){ 
-      sonuc = "Kazandın!";
-    } else if (oyuncu === "Kağıt" && bilgisayar === "Makas"){ 
-      sonuc = "Kaybettin!";
-    } else if (oyuncu === "Kağıt" && bilgisayar === "Taş"){ 
-      sonuc = "Kazandın!";  
-    } else if (oyuncu === "Makas" && bilgisayar === "Taş"){ 
-      sonuc = "Kaybettin!"; 
-    } else if (oyuncu === "Makas" && bilgisayar === "Kağıt"){ 
-      sonuc = "Kazandın!"; 
-    } else if (oyuncu === "Makas" && bilgisayar === "Makas"){ 
-      sonuc = "Beraberlik"; 
-    } else if (oyuncu === "Taş" && bilgisayar === "Taş"){ 
-      sonuc = "Beraberlik!"; 
-    } else if (oyuncu === "Kağıt" && bilgisayar === "Kağıt"){ 
-      sonuc = "Beraberlik";   
-    }
-    return sonuc;
+  if(oyuncu === "Taş" && bilgisayar === "Kağıt" ){
+  return "Kaybettin!";
   }
+  else if (oyuncu === "Taş" && bilgisayar === "Makas" ){
+    return "Kazandın!";
+  }
+  else if (oyuncu === "Taş" && bilgisayar === "Taş" ){
+    return "Beraberlik";
+  }
+  else if (oyuncu === "Kağıt" && bilgisayar === "Taş" ){
+    return "Kazandın!";
+  }
+  else if (oyuncu === "Kağıt" && bilgisayar === "Makas" ){
+    return "Kaybettin!";
+  }
+  else if (oyuncu === "Kağıt" && bilgisayar === "Kağıt" ){
+    return "Beraberlik";
+  }
+  else if (oyuncu === "Makas" && bilgisayar === "Kağıt" ){
+    return "Kazandın!";
+  }
+  else if (oyuncu === "Makas" && bilgisayar === "Taş" ){
+    return "Kaybettin!";
+  }
+  else if (oyuncu === "Makas" && bilgisayar === "Makas" ){
+    return "Beraberlik";
+  }
+} 
+console.log(oyun("Makas", "Kağıt"));
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
 /*
@@ -153,16 +160,18 @@ function oyun(oyuncu, bilgisayar) {
 Şimdi kendi seçtiğiniz bir seçime karşı bilgisayarın rastgele oluşturduğu seçimi yukarıda yazdığınız oyun fonsiyonu ile oynayın ve sonucu console'a yazdırın.
 Örn: console.log(oyun("Makas",bilgisayarinSecimi()))
 */
-function bilgisayarinSecimi() {
-   let secim = Math.random() * 3;
-   if(secim < 1){
-    return "Taş";
-   } else if ( secim < 2 ){
-    return "Makas";
-} else {
-  return "Kağıt";
-}
-}
+function bilgisayarinSecimi(bilgSecim) {
+  bilgSecim = Math.floor(Math.random()*2);
+  if(bilgSecim === 1){
+   return "Taş";
+  } else if (bilgSecim === 2){
+   return "Kağıt";
+  }
+  else {
+   return "Makas";
+  }
+} 
+oyun("Makas",bilgisayarinSecimi());
 
 /* Görev 4 : Metrik Dönüştürücü */
 
@@ -212,13 +221,14 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 3. Bu fonksiyonun dışında bir yerde, maymun sayısının her seferinde 1 azaldığı ve maymun sayısı 1 olana kadar devem eden bir döngü oluşturun. 
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
-for(let sayi = 5; sayi >= 1; sayi--){
-function cocukSarkisi(sarki){
-      /*buraya kodunu yazabilirsin*/
-    let sayi = 5;
+function cocukSarkisi(maymunSayisi){
+  /*buraya kodunu yazabilirsin*/
+return  maymunSayisi + " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!" ;  
+} console.log(cocukSarkisi(5));
+for(let i=5; i> 0; i--){
+console.log(i + " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!");
 }
-console.log(sayi + " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!")
-}
+
 
 
 /* Görev 6 : Not Hesaplayıcı */
@@ -265,11 +275,19 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yapın.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
+function sesliHarfSayaci(strArg) {
+    let sayac = 0;
+    let sesliHarflerDizi= ["a", "e", "i", "o", "u"];
+    let strArgDizi = [];
+    strArgDizi = strArg.split("");
+    console.log(strArgDizi); //[a,n,k,a,r,a]
+    for (let i = 0; i < strArgDizi.length; i++) {
+      if (strArgDizi.includes(sesliHarflerDizi[i])) {
+        sayac = sayac + 1;
+      } 
+    }
+    return sayac;
 
-function sesliHarfSayaci(ifade) {
-  /*buraya kodunu yazabilirsin*/
-  
-}
 
 
 
